@@ -1,6 +1,5 @@
-package com.leyou.common.exception;
+package com.leyou.common.enums;
 
-import com.leyou.common.enums.ExceptionEnum;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -10,14 +9,18 @@ import lombok.NoArgsConstructor;
  *
  * @author：JiangYuzhen
  * @date：2019/7/21
- * @time: 22:50
+ * @time: 22:52
  * @description: TODO
  */
 @Getter
 @NoArgsConstructor
 @AllArgsConstructor
-public class LyException extends RuntimeException{
+public enum ExceptionEnum {
 
-    private ExceptionEnum exceptionEnum;
+    PRICE_CANNOT_BE_NULL(400,"价格不能为空"),
+    CATEGORY_NOT_FOND(404,"商品分类没查到")
+    ;
+    private int code;
+    private String msg;
 
 }
